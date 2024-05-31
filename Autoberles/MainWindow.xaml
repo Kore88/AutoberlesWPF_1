@@ -1,0 +1,116 @@
+﻿<Window x:Class="Autoberles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Autoberles"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Grid >
+        <TabControl Margin="10"
+             Width="450"
+            Height="350"
+             VerticalAlignment="Top"
+             HorizontalAlignment="Center">
+            <TabItem>
+                <TabItem.Header>Login</TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="lbUserName"
+                           Content="Felhasználónév: "
+                           Grid.Row="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontWeight="Bold"></Label>
+                    <TextBox x:Name="tbUserName"
+                             Grid.Row="1"
+                             Height="30"
+                             Width="150"
+                             FontSize="24"></TextBox>
+                    <Label x:Name="lbPassword"
+                           Content="Jelszó: "
+                           Grid.Row="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontWeight="Bold"></Label>
+                    <TextBox x:Name="tbPassword"
+                             Grid.Row="3"
+                             Height="30"
+                             Width="250"
+                             FontSize="24"></TextBox>
+                    <Button x:Name="BtnLogin"
+                            Grid.Row="4"
+                            Height="40"
+                            Width="150"
+                            Content="Bejelentkezés"
+                            FontWeight="ExtraBold">
+                        
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>Autók</TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="320"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dgCars"
+                              Margin="5">
+                        <!--<DataGrid.Columns>--><!--
+                            <DataGridTemplateColumn Header="ID"/>
+                            <DataGridTemplateColumn Header="Márka"/>
+                            <DataGridTemplateColumn Header="Típus"/>
+                            <DataGridTemplateColumn Header="Évjárat"/>
+                            <DataGridTemplateColumn Header="Ár/nap"/>
+                        --><!--</DataGrid.Columns>-->
+                    </DataGrid>
+
+                    <Button x:Name="btnNewCar"
+                            Grid.Column="1"
+                            Width="100"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Margin="10,10,0,0"
+                            Height="30"
+                            Content="Új autó" Click="btnNewCar_Click"></Button>
+
+                    <Button x:Name="btnDeleteCar"
+                            Grid.Column="1"
+                            Width="100"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Margin="10,70,0,0"
+                            Height="30"
+                            Content="Autó törlése"></Button>
+
+                    <Button x:Name="btnEditCar"
+                            Grid.Column="1"
+                            Width="100"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Margin="10,130,0,0"
+                            Height="30"
+                            Content="Autó szerekesztése"></Button>
+
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>Foglalások</TabItem.Header>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btnClose"
+                Width="120"
+                Height="30"
+                VerticalAlignment="Bottom"
+                Margin="0,0,0,10"
+                Content="Bezárás" Click="btnClose_Click"></Button>
+    </Grid>
+
+</Window>
